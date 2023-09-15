@@ -1,0 +1,846 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  *{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+  }
+
+
+  .mainContainer{
+    background: #F5F7FB;
+    height: 100vh;
+    overflow: auto;
+    overflow-x: hidden;
+    @apply flex flex-col md:flex-row
+  }
+
+  .contentContainer{
+    height:100vh;
+    overflow-y: auto;
+    width:100%;
+    }
+
+    .contentContainer::-webkit-scrollbar {
+      width:7px;
+    }
+    .contentContainer::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .contentContainer::-webkit-scrollbar-thumb {
+      border-radius:2px;
+      background: linear-gradient(96deg, #298BD9 10%, #002D4A 100%);
+    }
+    .contentContainer::-webkit-scrollbar-thumb:hover {
+       background: linear-gradient(96deg, #33C0E4 10%, #298BD9 100%);
+    }
+
+
+  .title{
+    z-index: 200;
+    @apply absolute top-5 md:top-3 ml-3 font-bold uppercase tracking-wider text-gray-700 text-sm
+  }
+
+
+  .navbarContainer{
+    z-index:100;
+    background: #F5F7FB;
+    @apply absolute shadow md:shadow-none right-0 w-[100%] text-white flex justify-end p-2 items-center gap-4
+  }
+
+  .navbarSearchContainer{
+    z-index:100;
+    border-radius:20px;
+    background-color: #E0E0E0B2;
+    @apply xl:w-1/3 h-[40px] hidden md:flex items-center justify-between px-4 
+  }
+  
+
+  .navbarSearchContainer input{
+    background:none;
+    width:90%;
+    border:0;
+    outline:0;
+    color: #000;
+  }
+
+  .navbarSearchContainer svg{
+    color: #A7A7A7;
+  }
+
+  .navbarButtonContainer{
+    @apply flex gap-2
+  }
+
+  .buttonCircle{
+    background-color: #fff;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    box-shadow:0 0 10px #0000002e;
+    @apply flex items-center justify-center
+  }
+
+  .buttonCircle svg{
+    color:#002D4A;
+  }
+
+  .profileContainer{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    overflow: hidden;
+  }
+
+  .profileContainer img{
+    object-fit: cover;
+  }
+
+  /* .contentContainer{
+    @apply mt
+  } */
+
+  .sidebarContainer{
+    z-index:200;
+    @apply hidden md:flex
+  }
+
+  .sidebar{
+    background:#002D4A;
+    color: #fff;
+    width:200px;
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index:1000;
+    gap:10px;
+  }
+
+  .linkWrapper{
+    width:90%;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+  }
+
+  .linkWrapper span{
+    @apply uppercase text-xs tracking-wider font-medium mt-5
+  }
+
+  .sidebarTop{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    padding:20px 15px;
+  }
+
+  .sidebar .logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom:2px solid #ffffff68;
+    padding: 10px;
+    padding-bottom:15px;
+  }
+
+
+  .bars{
+    display: flex;
+    font-size: 25px;
+    margin-left: 50px;
+    margin-top:10px;
+    
+  }
+  .sidebar .link{
+    display: flex;
+    color: #fff;
+    width:90%;
+    padding:6px;
+    border-radius:30px;
+    gap: 10px;
+    transition: all 0.5s;
+    align-items: center;
+  }
+
+  .active{
+    background: #FFFFFF4D;
+  }
+  .sidebar .icon, .link_text{
+    font-size:16px;
+  }
+                                                                                                                            
+  .dashboardContainer{
+    @apply mt-20 p-2 flex md:flex-col 
+
+  }
+
+  .cardContainer{
+    @apply flex gap-5 items-center justify-center lg:justify-start
+  }
+
+  .cardWrapper-1{
+    @apply flex flex-col gap-4
+  }
+
+  .cardContainer{
+    @apply flex flex-wrap 
+  }
+
+  .cardWrapper{
+    @apply w-[300px] lg:w-[380px]
+  }
+
+  
+  .cardBoxContainer{
+    background-color: #fff;
+    padding:15px;
+    border-radius:20px;
+    box-shadow:0 0 10px #0000000f;
+  
+  }
+
+  .cardTitle{
+    @apply text-sm text-gray-700 font-bold
+  }
+
+  .cardBoxContainer-1{
+    @apply flex flex-col gap-3
+  }
+
+  .cardBoxContainer-2{
+    @apply flex flex-col gap-3
+    
+  }
+
+  .cardBoxContainer-3{
+    @apply flex flex-col gap-3
+    
+  }
+
+  .cardBoxContainer-2 select{
+    background-color: #EAEAEC;
+    padding:17px;
+    border-radius:10px;
+    outline: none;
+  }
+
+  .cardBoxContainer-2 button{
+    background: linear-gradient(96deg, #298BD9 0%, #33C0E4 100%);
+    color: #fff;
+    padding:15px;
+    border-radius:10px;
+  }
+
+  .cardBox{
+    background: linear-gradient(96deg, #298BD9 0%, #33C0E4 100%);
+    width:100%;
+    height:90px;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    border-radius:10px;
+    position: relative;
+  }
+
+  .cardCircle{
+    width:60px;
+    height:60px;
+    background-color:#fff;
+    border-radius:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right:10px;
+  }
+
+  .cardCircle svg{
+    color: #002D4A;
+    font-size:30px;
+  }
+
+  .cardBox span{
+    color: #fff;
+    position: absolute;
+    left: 20px;
+    bottom:20px;
+  }
+
+  .tableWrapper{
+    @apply mt-10 pr-5 hidden lg:block 
+  }
+
+  
+
+  .actionBtn{
+    @apply flex gap-2
+  }
+
+  .actionBtn button{
+    border-radius: 20px;
+    font-size: 12px;
+    @apply  px-3 p-1 uppercase text-white font-semibold
+  }
+
+  .actionBtn .open{
+    background-color: #33C0E4;
+  }
+
+  .actionBtn .delete{
+    background-color: #FF4343;
+  }
+
+  /* Handle on hover */
+  .css-1hdxnok-MuiTableContainer-root::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(96deg, #33C0E4 10%, #298BD9 100%);
+    
+
+  }
+
+
+  .mobileMenu{
+    height:130px;
+    position: relative;
+    overflow-x: auto;
+    background-color: #002D4A;
+    @apply px-10  bottom-0 md:hidden  flex items-center gap-4
+  }
+    .mobileMenu::-webkit-scrollbar {
+      height:6px;
+    }
+    .mobileMenu::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .mobileMenu::-webkit-scrollbar-thumb {
+      border-radius:2px;
+      background: linear-gradient(96deg, #298BD9 10%, #0e639c 100%) !important;
+      
+    }
+
+    .mobileMenu::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(96deg, #33C0E4 10%, #298BD9 100%) !important;
+    }
+
+  .mobileMenu .mobileLink {
+    background-color: #ffffff;
+    color: #002D4A;
+    font-size: larger;
+    border-radius:12px;
+    transition-duration:200ms;
+    @apply p-3 flex items-center flex-col justify-center w-[50px] sm:w-[100px]
+  }
+
+  .mobileLink:hover{
+    background-color:#298BD9;
+    color: #fff;
+  }
+
+  .activeMenu{
+    background-color: #298BD9 !important;
+    color: #fff !important;
+  }
+
+
+  
+
+
+  .mobileMenu .name{
+    @apply text-xs hidden sm:flex font-semibold mt-1
+  }
+
+  .orgContainer{
+    overflow-y:auto;
+    @apply mt-20 p-2 px-5 xl:px-0  flex flex-col xl:flex-row gap-5 lg:items-start
+  }
+
+  .orgSearchContainer{
+    box-shadow:0 0 5px #0000000f;
+    background-color: #fff;
+    border-radius:10px;
+    overflow: hidden;
+    @apply flex  p-2
+  }
+
+  .orgContainer input{
+    border-radius:10px;
+    outline: none;
+    @apply w-[90%] p-2  px-5 
+  }
+
+  .orgBtn{
+    @apply flex gap-2
+  }
+
+  .orgBtn button{
+    border-radius:7px;
+    width:80px;
+    font-size:12px;
+    @apply flex items-center justify-center gap-2 uppercase
+  }
+  .orgBtn button svg{
+    font-weight:600;
+  }
+
+  .orgBtn .filter{
+    background: rgba(224, 224, 224, 0.50);
+    color: #298BD9;
+    font-weight: 600;
+  }
+
+  .orgBtn .find{
+    background-color: #298BD9;
+    color: #fff;
+  }
+
+  .orgContent-1{
+    @apply flex flex-col justify-center  lg:p-0 xl:w-[90%] w-[100%]
+  }
+
+  .orgContent-2{
+    @apply w-[100%] xl:px-3 xl:w-[350px] 
+  }
+
+  .orgTableWrapper{
+    box-shadow:0 0 5px #0000000f;
+    height:70vh;
+    @apply bg-white mt-5 rounded-md
+  }
+
+  
+
+  .accordionHeader{
+    width:100%;
+    @apply flex items-center justify-center
+  }
+
+  .accordionHeader h2{
+    font-size:14px;
+    @apply uppercase font-bold
+  }
+
+  .accordionHeader svg{
+    color: #000;
+  }
+
+  .accordionContent{
+    @apply flex flex-col p-2 gap-2
+  }
+
+  .accordionContent button{
+    font-size:12px;
+    background: rgba(224, 224, 224, 0.50);
+    border-radius:10px;
+    color: #298BD9;
+    @apply p-3 font-semibold
+
+  }
+
+  .staffContainer{
+    @apply mt-20 flex flex-col xl:flex-row
+  }
+
+  /* .tabWrapper{
+  } */
+
+  .staffContent-1{
+    @apply w-[100%] flex flex-col gap-2 px-3 mb-5 lg:mb-0
+  }
+
+  .tabContainer{
+    padding-top:5px;
+    
+
+  }
+
+  .staffTableWrapper{
+    overflow-x: auto;
+    box-shadow: 0 0 5px #0000000e;
+  }
+
+  .staffContent-2{
+    @apply xl:w-[350px] px-5
+  }
+
+  .staffSearchContainer{
+    background-color: #fff;
+    border-radius:10px;  
+    box-shadow: 0 0 5px #0000000e;
+   
+    @apply flex p-2 w-[100%]  
+  }
+
+  .staffSearchContainer input{
+    padding:10px;
+    width:90%;
+    outline: none;
+  }
+
+  .reportContainer{
+    @apply w-[100%] flex flex-col gap-4
+  }
+
+  .reportHeader{
+    border-radius:15px;
+    @apply bg-white p-3  flex flex-col gap-3
+  }
+
+
+  .reportInputWrapper{
+    @apply flex flex-col lg:flex-row gap-10 lg:items-center
+  }
+
+  .inputBox{
+    @apply flex flex-col lg:flex-row gap-5 items-center
+  }
+
+  .graphContainer{
+    @apply mt-4
+  }
+
+  .graphTitle{
+    font-size:16px;
+    font-weight:800;
+    @apply text-slate-700
+  }
+
+  .graphWrapper{
+    @apply flex gap-5 w-[100%] flex-col lg:flex-row
+  }
+
+  .graphContent{
+    @apply w-[100%] lg:w-[50%]
+  }
+
+  .graphBox{
+    border-radius:15px;
+    @apply bg-white w-[100%] h-[400px] flex items-center justify-between
+  }
+
+
+  .graphHeader{
+    @apply flex gap-4 items-center mb-4
+  }
+  .graphHeader-2{
+    @apply flex justify-end
+  }
+
+  .graphHeader span{
+    font-size:12px;
+    @apply font-semibold
+  }
+
+  .graphBtnWrapper{
+    @apply flex gap-3
+  }
+
+  .graphBtnWrapper button{
+    border-radius:30px;
+    font-size:12px;
+    @apply w-[150px] p-2 font-semibold
+  }
+
+  .graphBtnWrapper .btn1{
+    background-color: #298BD9;
+    color: #fff;
+  }
+
+  .graphBtnWrapper .btn2{
+    background-color: #E0E0E080;
+    color: #298BD9;
+  }
+
+  .chartBox{
+    @apply w-[100%] text-center p-5
+  }
+
+  .chartBox h4{
+    font-size:12px;
+    @apply font-semibold mt-5
+  }
+
+  .reportTableContainer{
+    @apply py-4
+  }
+  .reportContainer h3{
+      font-size:16px;
+      font-weight:800;
+      @apply text-slate-700 py-3
+  }
+  
+  .tableTitleWrapper span{
+    @apply font-semibold 
+  }
+
+  .tableTitleWrapper h4{
+    @apply uppercase text-slate-800 font-semibold
+  }
+
+  .mapContainer{
+    border-radius:15px;
+  }
+
+
+  .exportMenuBox{
+    @apply flex items-center flex-col p-3
+  }
+
+  .exportMenuHeader{
+    font-size:18px;
+    border-bottom:2px solid #a7a7a758;
+    @apply flex w-[260px] justify-between pb-3  items-center
+  }
+
+  .exportMenuHeader svg{
+    color: #A7A7A7;
+  }
+
+  .exportMenuHeader h4{
+    @apply font-semibold
+  }
+
+  .exportSelect{
+    @apply flex flex-col mx-3 w-[100%]   gap-3
+  }
+
+  .exportSelect span{
+    @apply mt-2 font-semibold
+  }
+
+  .exportSelect select{
+    border-radius:10px;
+    @apply bg-gray-200 p-3 
+  }
+
+  .exportSelect button{
+    background: linear-gradient(96deg, #298BD9 0%, #33C0E4 100%);
+    @apply text-white p-3 rounded-lg
+  }
+
+
+
+
+
+}
+
+
+/* export box style  */
+.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper{
+  border-radius:15px !important;
+}
+
+
+ /* report input style  */
+.reportContainer .css-dru9rs-MuiFormControl-root {
+  background: #EAEAEC;
+  border-radius: 10px;
+}
+
+.reportContainer  .MuiOutlinedInput-notchedOutline {
+  border: none !important;
+}
+
+
+
+.MuiTabs-flexContainer button{
+  height:60px;
+  color: #000;
+  text-transform: capitalize;
+  @apply font-semibold lg:w-[166px] border 
+}
+
+.Mui-selected{
+  background-color: #fff;
+}
+
+
+/* ACCORDION COSTUMIZATIONS */
+.MuiAccordion-root{
+  border-radius: 10px !important;
+  box-shadow:0 0 5px #0000000f;
+  @apply overflow-hidden mb-2
+}
+
+
+
+
+.MuiTabPanel-root{
+  padding: 0;
+  @apply pt-4 
+  
+}
+
+
+/*____________ TABLE SCROLL BAR STYLE_________________ */
+.css-1hdxnok-MuiTableContainer-root::-webkit-scrollbar {
+  width:7px;
+  height:7px;
+}
+.css-1hdxnok-MuiTableContainer-root::-webkit-scrollbar-track {
+  background: transparent;
+}
+.css-1hdxnok-MuiTableContainer-root::-webkit-scrollbar-thumb {
+  border-radius:2px;
+  background: linear-gradient(96deg, #298BD9 10%, #002D4A 100%) !important;
+  
+}
+
+.css-1hdxnok-MuiTableContainer-root::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(96deg, #33C0E4 10%, #298BD9 100%) !important;
+}
+
+
+
+.MuiTableContainer-root{
+  background-color: #fff;
+}
+
+/* table height adjust */
+.css-1hdxnok-MuiTableContainer-root{
+  min-height:100%;
+}
+
+
+.homeContainer{
+  @apply flex items-center justify-center
+}
+
+.homeContent{
+  @apply relative flex flex-col items-center justify-center
+}
+
+.homeContent img{
+  @apply ml-10 sm:ml-20 md:ml-24
+}
+
+
+.homeDetailWrapper{
+  @apply absolute text-center w-[100%] top-10 flex flex-col items-center justify-center
+}
+
+.homeDetailWrapper h3{
+  @apply text-lg font-medium
+}
+
+.homeDetailWrapper h1{
+  background: linear-gradient(91deg, #298BD9 -2.91%, #33C0E4 104.88%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  @apply text-3xl font-extrabold md:text-6xl 
+}
+
+.homeBtn{
+  border-radius:10px;
+  background: linear-gradient(93deg, #298BD9 0%, #33C0E4 100%);
+  @apply p-4 text-white lg:w-[300px] text-center md:-mt-32
+}
+
+
+.loginContainer{
+  background-color: #F5F7FB;
+  @apply flex flex-col lg:flex-row h-[100vh] items-center
+}
+
+.loginLeftContent{
+  @apply relative flex items-center justify-center ml-10 md:ml-20
+}
+
+.loginDetailWrapper{
+  @apply absolute flex flex-col items-center top-10 md:-ml-20
+}
+
+.loginDetailWrapper h4{
+  @apply text-lg font-medium
+}
+
+.loginDetailWrapper h1{
+  background: linear-gradient(91deg, #298BD9 -2.91%, #33C0E4 104.88%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  @apply text-3xl font-extrabold md:text-5xl xl:text-6xl
+}
+
+.loginRightContent{
+  @apply absolute flex items-center justify-center  lg:relative h-[100%] w-[100%] lg:w-[50%]
+}
+
+.loginRightContent form{
+  border-radius:15px;
+  @apply flex flex-col -mt-16 md:-mt-40 lg:-mt-0 lg:relative  bg-white w-[300px] lg:w-[500px] items-center p-4 lg:p-10 gap-5
+}
+
+.loginRightContent form img{
+  @apply w-[100px]
+}
+
+.loginRightContent form .credInput{
+  border-radius:10px;
+  @apply bg-gray-200 p-3 w-[100%]
+}
+
+.loginRightContent form label{
+  @apply flex w-[100%] justify-between
+}
+
+.rememberBox{
+  @apply flex items-center justify-start
+}
+
+.loginBtnWrapper{
+  @apply flex gap-3
+}
+
+.loginBtnWrapper .button{
+  border-radius:10px;
+  font-size:18px;
+  @apply w-[120px] p-3 lg:w-[200px]  font-semibold text-center
+}
+
+.loginBtnWrapper .btn-1{
+  color: #fff;
+  background: linear-gradient(93deg, #298BD9 0%, #33C0E4 100%);
+}
+
+.loginBtnWrapper .btn-2{
+  border: 1px solid #33C0E4;
+  color:#33C0E4;
+}
+
+.createFormContainer{
+  @apply mt-10 flex items-center pt-10 px-10 md:px-0 justify-center lg:justify-start
+}
+
+.createForm{
+  border-radius:15px;
+  box-shadow:0 0 10px #00000006;
+  @apply flex flex-col gap-5 bg-white w-[800px] p-10  text-center
+}
+
+.createForm h1{
+  @apply text-2xl font-semibold
+}
+
+.createBtnWrapper{
+  @apply flex gap-2 items-center justify-center
+}
+
+.createBtnWrapper button{
+  border-radius:10px;
+  @apply w-[180px] lg:w-[350px] p-3
+}
+
+.createBtnWrapper .btnSave{
+  background: linear-gradient(93deg, #298BD9 0%, #33C0E4 100%);
+  color: #fff;
+  font-weight:800;
+}
+
+.createBtnWrapper .btnCancel{
+  border: 1px solid #33C0E4;
+  color: #33C0E4;
+  font-weight:800;
+}
