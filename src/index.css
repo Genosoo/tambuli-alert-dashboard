@@ -40,15 +40,15 @@
 
 
   .title{
-    z-index: 200;
+    z-index: 3000;
     @apply absolute top-5 md:top-3 ml-3 font-bold uppercase tracking-wider text-gray-700 text-sm
   }
 
 
   .navbarContainer{
-    z-index:100;
+    z-index:1000;
     background: #F5F7FB;
-    @apply absolute shadow md:shadow-none right-0 w-[100%] text-white flex justify-end p-2 items-center gap-4
+    @apply absolute shadow md:shadow-none right-0 w-[100%] text-white flex justify-end p-2 items-center gap-4 
   }
 
   .navbarSearchContainer{
@@ -104,10 +104,27 @@
   } */
 
   .sidebarContainer{
-    z-index:200;
+    z-index:2000;
     @apply hidden md:flex
   }
 
+
+  .sidebar::-webkit-scrollbar {
+    width:8px;
+  }
+  .sidebar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .sidebar::-webkit-scrollbar-thumb {
+    border-radius:5px;
+    background: linear-gradient(96deg, #298BD9 10%, #0e639c 100%) !important;
+  }
+
+  .sidebar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(96deg, #33C0E4 10%, #298BD9 100%) !important;
+  }
+
+  
   .sidebar{
     background:#002D4A;
     color: #fff;
@@ -118,6 +135,8 @@
     align-items: center;
     z-index:1000;
     gap:10px;
+    overflow-y: auto;
+    padding-bottom:20px;
   }
 
   .linkWrapper{
@@ -179,11 +198,11 @@
   }
 
   .cardContainer{
-    @apply flex gap-5 items-center justify-center lg:justify-start
+    @apply flex gap-5  justify-center lg:justify-start
   }
 
   .cardWrapper-1{
-    @apply flex flex-col gap-4
+    @apply flex flex-col gap-4 
   }
 
   .cardContainer{
@@ -223,7 +242,7 @@
 
   .cardBoxContainer-2 select{
     background-color: #EAEAEC;
-    padding:17px;
+    padding:10px;
     border-radius:10px;
     outline: none;
   }
@@ -231,7 +250,7 @@
   .cardBoxContainer-2 button{
     background: linear-gradient(96deg, #298BD9 0%, #33C0E4 100%);
     color: #fff;
-    padding:15px;
+    padding:10px;
     border-radius:10px;
   }
 
@@ -244,6 +263,12 @@
     align-items: center;
     border-radius:10px;
     position: relative;
+    transition-duration:300ms;
+    cursor: pointer;
+  }
+
+  .cardBox:hover{
+    box-shadow:10px 10px 10px #7e7e7e;
   }
 
   .cardCircle{
@@ -317,7 +342,6 @@
     .mobileMenu::-webkit-scrollbar-thumb {
       border-radius:2px;
       background: linear-gradient(96deg, #298BD9 10%, #0e639c 100%) !important;
-      
     }
 
     .mobileMenu::-webkit-scrollbar-thumb:hover {
@@ -338,7 +362,7 @@
     color: #fff;
   }
 
-  .activeMenu{
+  .active{
     background-color: #298BD9 !important;
     color: #fff !important;
   }
@@ -620,6 +644,48 @@
   }
 
 
+
+  .search-suggestions::-webkit-scrollbar {
+    width:4px;
+  }
+  .search-suggestions::-webkit-scrollbar-track {
+    background:#c2ddf4 ;
+  }
+  .search-suggestions::-webkit-scrollbar-thumb {
+    border-radius:5px;
+    background: linear-gradient(96deg, #298BD9 10%, #0e639c 100%) !important;
+  }
+
+  .search-suggestions::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(96deg, #33C0E4 10%, #298BD9 100%) !important;
+  }
+
+  .forecast-scroll::-webkit-scrollbar {
+    width:10px;
+  }
+  .forecast-scroll::-webkit-scrollbar-track {
+    background:#ffffff ;
+  }
+  .forecast-scroll::-webkit-scrollbar-thumb {
+    border-radius:3px;
+    background: linear-gradient(96deg, #298BD9 10%, #0e639c 100%) !important;
+  }
+
+  .forecast-scroll::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(96deg, #33C0E4 10%, #298BD9 100%) !important;
+  }
+
+
+
+  .search-suggestions{
+    box-shadow:10px 10px 10px #00000034;
+    background-color: #ffffff;
+     @apply absolute mt-12 -ml-4 w-[300px] h-[300px] overflow-y-auto  z-10
+  }
+
+  .forecast-scroll{
+    @apply h-[700px] overflow-y-auto pr-3 shadow-md
+  }
 
 
 

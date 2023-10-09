@@ -1,10 +1,13 @@
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Profile() {
   const [anchorEl, setAnchorEl] = useState(null);
+  const navigate = useNavigate()
   const open = Boolean(anchorEl);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -12,6 +15,11 @@ export default function Profile() {
     setAnchorEl(null);
   };
 
+  const handleLogout = () => {
+    navigate("/")
+  }
+
+  
 
   return (
     <div className='profileContainer'>
@@ -30,7 +38,7 @@ export default function Profile() {
       >
         <MenuItem onClick={handleClose}>Profile</MenuItem>
         <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={handleLogout}>Logout</MenuItem>
       </Menu>
     </div>
   )

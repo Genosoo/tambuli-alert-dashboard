@@ -28,7 +28,7 @@ export default function CustomizedTable() {
 
   useEffect(() => {
     // Define the API endpoint you want to fetch data from
-    const apiUrl = 'http://localhost:3000/api/organizations';
+    const apiUrl = 'http://localhost:3001/api/get-organizations';
   
     // Make a GET request to the API
     axios.get(apiUrl)

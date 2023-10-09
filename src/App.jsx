@@ -1,28 +1,28 @@
-import { Routes, Route } from 'react-router-dom'
-import Sidebar from './components/Sidebar/Sidebar'
-import Navbar from './components/Navbar/Navbar'
-import MobileMenu from './components/MobileMenu/Menu'
+import { Routes, Route} from 'react-router-dom';
 
-import Dashboard from './pages/dashboard/Dashboard'
-import Organizations from './pages/organizations/Organizations'
-import CreateFormOrg from './pages/organizations/create-organization/CreateFormOrg'
-import Staff from './pages/staff/Staff'
+import HomeComponent from './Home/HomeComponent';
+import ContentComponent from './content/ContentComponent';
+import LoginComponent from './auth/login/LoginComponent';
+import RegisterComponent from './auth/register/RegisterComponent';
+import NotFoundPage from './NotFound/NotFoundPage';
 
+import Layout from './content/Layout/Layout'
 
-export default function Home() {
+export default function App() {
+  
   return (
-      <div className="mainContainer">
-      <Sidebar />
-      <Navbar />
-        <div className="contentContainer">
-          <Routes>
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/organizations" element={<Organizations />} />
-            <Route path="/organizations/create-organization" element={<CreateFormOrg/>} />
-            <Route path="/staff" element={<Staff />} />
-          </Routes>
-        </div>
-      <MobileMenu />
-      </div>
-  )
+    <>
+      <Routes>
+        <Route path='/' element={<HomeComponent />} />
+          <Route path='/login' element={<LoginComponent />} />
+          <Route path='/register' element={<RegisterComponent />} />
+          <Route element={<Layout />}>
+            <Route 
+                path="/tambuli-alert/*" 
+                element={<ContentComponent /> } />
+          </Route>
+        <Route path='*' element={<NotFoundPage />} />
+      </Routes>
+    </>
+  );
 }

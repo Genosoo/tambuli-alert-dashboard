@@ -13,74 +13,106 @@ import {
     BsFillGrid1X2Fill,
     BsClipboard2Fill,
     BsTruckFrontFill,
-    BsExclamationOctagonFill
+    BsCloudLightningRainFill,
+    BsExclamationOctagonFill,
+    BsFillExclamationTriangleFill
  } from 'react-icons/bs'
-import { Link } from 'react-router-dom';
+
+ import {AiTwotoneVideoCamera} from 'react-icons/ai'
+import { NavLink } from 'react-router-dom';
 
 const menuItem = [
+   
     {
-        path:"/dashboard",
+        path:"/tambuli-alert/dashboard",
         name:"Dashboard",
         icon:<BsFillGridFill/>
     },
     {
-        path:"/organizations",
+        path:"/tambuli-alert/weather",
+        name:"Weather",
+        icon:<BsCloudLightningRainFill/>
+    },
+    {
+        path:"/tambuli-alert/video",
+        name:"Video",
+        icon:<AiTwotoneVideoCamera/>
+        
+    },
+
+    {
+        path:"/tambuli-alert/organizations",
         name:"Organizations",
         icon:<BsFillBuildingsFill/>
     },
     {
-        path:"/staff",
+        path:"/tambuli-alert/facilities",
+        name:"Facilities",
+        icon:<BsFillBuildingsFill/>
+    },
+    {
+        path:"/tambuli-alert/activities",
+        name:"Activities",
+        icon:<BsFillBuildingsFill/>
+    },
+    {
+        path:"/tambuli-alert/staff",
         name:"Staff",
         icon:<BsFillPersonFill/>
         
     },
 
     {
-        path:"/volunteers",
+        path:"/tambuli-alert/volunteers",
         name:"Volunteers",
         icon:<BsFillPeopleFill/>
         
     },
 
     {
-        path:"/projects",
+        path:"/tambuli-alert/projects",
         name:"Projects",
         icon:<BsFillDiagram3Fill/>
         
     },
 
     {
-        path:"/assets",
+        path:"/tambuli-alert/assets",
         name:"Assets",
         icon:<BsBarChartLineFill/>
     },
     {
-        path:"/assessments",
+        path:"/tambuli-alert/assessments",
         name:"Assessments",
         icon:<BsFillPersonLinesFill/>
     },
     {
-        path:"/map",
+        path:"/tambuli-alert/map",
         name:"Map",
         icon:<BsFillMapFill/>
     },
     {
-        path:"/contentmanagement",
+        path:"/tambuli-alert/incidents",
+        name:"Incidents",
+        icon:<BsFillExclamationTriangleFill/>
+    },
+    {
+        path:"/tambuli-alert/contentmanagement",
         name:"Content Management",
         icon:<BsFillGrid1X2Fill/>
     },
     {
-        path:"/documents",
+        path:"/tambuli-alert/documents",
         name:"Documents",
         icon:<BsClipboard2Fill/>
     },
     {
-        path:"/vehicles",
+        path:"/tambuli-alert/vehicles",
         name:"Vehicles",
         icon:<BsTruckFrontFill/>
     },
     {
-        path:"/requests",
+        path:"/tambuli-alert/requests",
         name:"Requests",
         icon:<BsExclamationOctagonFill/>
     },
@@ -107,10 +139,10 @@ const Sidebar = () => {
               <div className="linkWrapper">
               <span>Navigate</span>
                {menuItem.map((item, index)=>(
-                       <Link to={item.path} key={index} style={{justifyContent: isOpen ? "start" :  "center"}}  className={`link `}>
+                       <NavLink to={item.path} key={index} className={ `link ${({ isActive}) => isActive ? "active" : '' }`} style={{justifyContent: isOpen ? "start" :  "center"}}  >
                            <div className="icon">{item.icon}</div>
                            <h2 style={{display: isOpen ? "block" : "none"}} className="link_text">{item.name}</h2>
-                       </Link>
+                       </NavLink>
                 ))}
               </div>
            </div>

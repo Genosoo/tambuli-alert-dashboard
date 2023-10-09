@@ -10,90 +10,119 @@ import {
     BsFillGrid1X2Fill,
     BsClipboard2Fill,
     BsTruckFrontFill,
-    BsExclamationOctagonFill
+    BsCloudLightningRainFill,
+    BsExclamationOctagonFill,
+    BsFillExclamationTriangleFill
  } from 'react-icons/bs'
+import { NavLink } from 'react-router-dom'
+import {AiTwotoneVideoCamera} from 'react-icons/ai'
+ 
+
 const menuItem = [
+   
     {
-        path:"/dashboard",
+        path:"/tambuli-alert/dashboard",
         name:"Dashboard",
         icon:<BsFillGridFill/>
     },
     {
-        path:"/organizations",
+        path:"/tambuli-alert/weather",
+        name:"Weather",
+        icon:<BsCloudLightningRainFill/>
+    },
+    {
+        path:"/tambuli-alert/organizations",
         name:"Organizations",
         icon:<BsFillBuildingsFill/>
     },
     {
-        path:"/staff",
+        path:"/tambuli-alert/activities",
+        name:"Activities",
+        icon:<BsFillBuildingsFill/>
+    },
+    {
+        path:"/tambuli-alert/facilities",
+        name:"Facilities",
+        icon:<BsFillBuildingsFill/>
+    },
+    {
+        path:"/tambuli-alert/staff",
         name:"Staff",
         icon:<BsFillPersonFill/>
         
     },
+    {
+        path:"/tambuli-alert/video",
+        name:"Video",
+        icon:<AiTwotoneVideoCamera/>
+        
+    },
 
     {
-        path:"/volunteers",
+        path:"/tambuli-alert/volunteers",
         name:"Volunteers",
         icon:<BsFillPeopleFill/>
         
     },
 
     {
-        path:"/projects",
+        path:"/tambuli-alert/projects",
         name:"Projects",
         icon:<BsFillDiagram3Fill/>
         
     },
 
     {
-        path:"/assets",
+        path:"/tambuli-alert/assets",
         name:"Assets",
         icon:<BsBarChartLineFill/>
     },
     {
-        path:"/assessments",
+        path:"/tambuli-alert/assessments",
         name:"Assessments",
         icon:<BsFillPersonLinesFill/>
     },
     {
-        path:"/map",
+        path:"/tambuli-alert/map",
         name:"Map",
         icon:<BsFillMapFill/>
     },
     {
-        path:"/contentmanagement",
+        path:"/tambuli-alert/incidents",
+        name:"Incidents",
+        icon:<BsFillExclamationTriangleFill/>
+    },
+    {
+        path:"/tambuli-alert/contentmanagement",
         name:"Content Management",
         icon:<BsFillGrid1X2Fill/>
     },
     {
-        path:"/documents",
+        path:"/tambuli-alert/documents",
         name:"Documents",
         icon:<BsClipboard2Fill/>
     },
     {
-        path:"/vehicles",
+        path:"/tambuli-alert/vehicles",
         name:"Vehicles",
         icon:<BsTruckFrontFill/>
     },
     {
-        path:"/requests",
+        path:"/tambuli-alert/requests",
         name:"Requests",
         icon:<BsExclamationOctagonFill/>
     },
    
 ]
-
 export default function Menu() {
 
   return (
     <div className='mobileMenu'>
         {menuItem.map((item, index)=>(
-        <a href={item.path} key={index} >
-              <div className={`mobileLink`}>
+        <NavLink to={item.path} key={index} className={ `mobileLink ${({ isActive}) => isActive ? "active" : '' }`} >
               <div className="icon">{item.icon}</div>
                 <span className='name'>{item.name.slice(0, 11)}</span>
-              </div>
-                
-        </a>
+        </NavLink>
         ))}
     </div>
   )

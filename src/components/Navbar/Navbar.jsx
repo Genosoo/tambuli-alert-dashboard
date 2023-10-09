@@ -1,11 +1,11 @@
 import Button from "./button/Button";
 import Profile from "./profile/Profile";
-import Search from "./search/Search";
+// import Search from "./search/Search";
 
 export default function Navbar() {
   return (
     <div className="navbarContainer">
-        <Search />
+        {/* <Search /> */}
         <Button />
         <Profile />
     </div>

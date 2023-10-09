@@ -18,7 +18,7 @@ export default function BasicAccordion() {
         </div>
         <div className="accordionContent">
           <button className='btn-1'>
-            <Link to={'/organizations/create-organization'}>Create Organization</Link>
+            <Link to={'/tambuli-alert/create-organization'}>Create Organization</Link>
           </button>
           <button className='btn-2'>Import</button>
         </div>

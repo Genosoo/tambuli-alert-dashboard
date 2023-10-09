@@ -8,6 +8,7 @@ import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 const VisuallyHiddenInput = styled('input')({
   clip: 'rect(0 0 0 0)',
@@ -31,6 +32,8 @@ export default function CreateFormOrg() {
   const [year, setYear] = useState('');
   const [comment, setComment] = useState('');
 
+  const navigate = useNavigate()
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,8 +50,9 @@ export default function CreateFormOrg() {
     };
 
     try {
-      const response = await axios.post('http://localhost:3000/api/organizations', formData);
+      const response = await axios.post('http://localhost:3001/api/create-organization', formData);
       console.log('Data submitted successfully:', response.data);
+      navigate('/tambuli-alert/organizations')
       // You can reset the form or perform any other action upon success
     } catch (error) {
       console.error('Error submitting data:', error);

@@ -1,21 +1,24 @@
 import { 
-  GoLocation,
   GoZap,
-  GoOrganization,
-  GoHome,
-  GoGraph,
-  GoProject,
   GoPeople,
-  GoPerson,
   GoPackage,
   GoProjectRoadmap,
-  GoAlert,
   GoCodeOfConduct,
   GoContainer,
   GoPaste
 } from 'react-icons/go'
 
+import { 
+   BsCloudLightningRainFill,
+   BsFillMapFill,
+   BsFillExclamationTriangleFill,
+   BsFillBuildingsFill,
+   BsFillDiagram3Fill,
+   BsFillPersonFill,
 
+} from 'react-icons/bs'
+
+import { Link } from 'react-router-dom'
 
 export default function Cards() {
   return (
@@ -23,24 +26,40 @@ export default function Cards() {
         <div className="cardWrapper cardWrapper-1">
            <div className="cardBoxContainer cardBoxContainer-1">
               <span className='cardTitle'>Situation Awareness</span>
+              <Link to={'/tambuli-alert/weather'}>
               <div className="cardBox">
-                 <span >Map</span>
+                 <span>Weather</span>
                  <div className="cardCircle">
-                     <GoLocation/>
+                     <BsCloudLightningRainFill/>
                  </div>
               </div>
+              </Link>
+              <Link to={'/tambuli-alert/map'}>
+              <div className="cardBox">
+                 <span>Map</span>
+                 <div className="cardCircle">
+                     <BsFillMapFill/>
+                 </div>
+              </div>
+              </Link>
+
+              <Link to={'/tambuli-alert/incidents'}>
               <div className="cardBox">
                  <span >Incidents</span>
                  <div className="cardCircle">
-                     <GoAlert/>
+                     <BsFillExclamationTriangleFill/>
                  </div>
               </div>
-
+              </Link>
            </div>
            <div className="cardBoxContainer cardBoxContainer-2">
              <span className='cardTitle'>Manage Facilities</span>
              <select name="" id="">
                <option value="">Please Select</option>
+               <option value="Facility1">Facility 1</option>
+               <option value="Facility2">Facility 2</option>
+               <option value="Facility3">Facility 3</option>
+               <option value="Facility4">Facility 4</option>
              </select>
              <button>Go</button>
            </div>
@@ -49,28 +68,34 @@ export default function Cards() {
         <div className="cardWrapper cardWrapper-2">
            <div className="cardBoxContainer cardBoxContainer-3">
               <span className='cardTitle'>Who is doing What and Where</span>
+              <Link to={'/tambuli-alert/organizations'}>
               <div className="cardBox">
                  <span>Organizations</span>
                  <div className="cardCircle">
-                     <GoOrganization/>
+                     <BsFillBuildingsFill/>
                  </div>
               </div>
-              <div className="cardBox">
-                 <span>Facilities</span>
-                 <div className="cardCircle">
-                     <GoHome/>
-                 </div>
-              </div>
-              <div className="cardBox">
-                 <span>Activities</span>
-                 <div className="cardCircle">
-                     <GoGraph/>
-                 </div>
-              </div>
+              </Link>
+             <Link to={'/tambuli-alert/facilities'}>
+               <div className="cardBox">
+                     <span>Facilities</span>
+                     <div className="cardCircle">
+                         <BsFillBuildingsFill/>
+                     </div>
+                  </div>
+             </Link>
+             <Link to={'/tambuli-alert/activities'}>
+               <div className="cardBox">
+                  <span>Activities</span>
+                  <div className="cardCircle">
+                      <BsFillBuildingsFill/>
+                  </div>
+               </div>
+             </Link>
               <div className="cardBox">
                  <span>Projects</span>
                  <div className="cardCircle">
-                     <GoProject/>
+                   <BsFillDiagram3Fill/>
                  </div>
               </div>
            </div>
@@ -80,12 +105,14 @@ export default function Cards() {
            <div className="cardBoxContainer cardBoxContainer-3">
               <span className='cardTitle'>Manage Resources</span>
              
-              <div className="cardBox">
-                 <span>Staff</span>
-                 <div className="cardCircle">
-                     <GoPerson/>
-                 </div>
-              </div>
+              <Link to={'/tambuli-alert/staff'}>
+               <div className="cardBox">
+                  <span>Staff</span>
+                  <div className="cardCircle">
+                      <BsFillPersonFill/>
+                  </div>
+               </div>
+              </Link>
               <div className="cardBox">
                  <span>Volunteers</span>
                  <div className="cardCircle">
