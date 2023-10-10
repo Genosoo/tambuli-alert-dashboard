@@ -11,12 +11,12 @@ import {
 import { 
    BsCloudLightningRainFill,
    BsFillMapFill,
-   BsFillExclamationTriangleFill,
    BsFillBuildingsFill,
    BsFillDiagram3Fill,
    BsFillPersonFill,
 
 } from 'react-icons/bs'
+import {AiTwotoneVideoCamera} from 'react-icons/ai'
 
 import { Link } from 'react-router-dom'
 
@@ -39,7 +39,7 @@ export default function Cards() {
               <div className="cardBox">
                  <span >Video Streaming</span>
                  <div className="cardCircle">
-                     <BsFillExclamationTriangleFill/>
+                     <AiTwotoneVideoCamera/>
                  </div>
               </div>
               </Link>

@@ -1,0 +1,43 @@
+{
+    "persons": [
+        { 
+            "name": "John Doe", 
+            "location": [14.5958, 120.9772], 
+            "camera": true, 
+            "videoUrl":"https://vod-progressive.akamaized.net/exp=1696961397~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F3925%2F21%2F544626780%2F2582617793.mp4~hmac=60908dba1ffe7a808c3cb74cafe3d02bdf9ace259b94786c86b6eb66b20905e8/vimeo-prod-skyfire-std-us/01/3925/21/544626780/2582617793.mp4" 
+        },
+        { 
+            "name": "Alice Johnson", 
+            "location": [14.6300, 121.0300], 
+            "camera": false
+                      
+        },
+        { 
+            "name": "Michael Smith", 
+            "location": [7.0667, 125.6000], 
+            "camera": true,
+            "videoUrl":"https://vod-progressive.akamaized.net/exp=1696962078~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F3842%2F18%2F469213441%2F2086216334.mp4~hmac=119ddfb80b8db8750f1177263b285794add58f7cdc810bf6ad04181509b7d4f2/vimeo-prod-skyfire-std-us/01/3842/18/469213441/2086216334.mp4" 
+
+         },
+        { 
+            "name": "Emma Brown", 
+            "location": [18.0000, 121.8000], 
+            "camera": false 
+        },
+        { 
+            "name": "David Wilson", 
+            "location": [14.4500, 120.9800],
+            "camera": true ,
+            "videoUrl":"https://vod-progressive.akamaized.net/exp=1696962098~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F715%2F18%2F453575265%2F1997788394.mp4~hmac=5b1491a81bb2d4903069907b7d57685967b4cd46aeae93726c0f6c75a939df80/vimeo-prod-skyfire-std-us/01/715/18/453575265/1997788394.mp4" 
+
+        }
+      ],
+    "vehicles": [
+      { "name": "Toyota Camry", "location": [11.7059, 122.3644] }, 
+      { "name": "Honda Civic", "location": [14.6242, 121.0153] }, 
+      { "name": "Ford Mustang", "location": [14.5500, 121.0000] }, 
+      { "name": "Chevrolet Malibu", "location": [14.7000, 120.9800] }, 
+      { "name": "Tesla Model S", "location": [14.6667, 120.9417] } 
+    ]
+  }
+  

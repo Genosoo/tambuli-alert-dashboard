@@ -1,18 +1,31 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable react/prop-types */
-import  { useState } from 'react';
+import  { useState, useEffect } from 'react';
 import { Accordion, AccordionSummary, AccordionDetails,  } from '@mui/material';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 const ForecastCard = ({ data }) => {
+  const [forecasts, setForecasts] = useState(data.list);
   // Check if forecast data exists
   if (!data) {
     return null;
   }
 
-  // Extract relevant forecast data
-  const forecasts = data.list;
+  useEffect(() => {
+    const currentTime = new Date().getTime() / 1000; // Current time in seconds
+    const filteredForecasts = data.list.filter((forecast) => {
+      // Convert forecast time to seconds
+      const forecastTime = new Date(forecast.dt_txt).getTime() / 1000;
+      // Display forecasts only for the future, remove past forecasts
+      return forecastTime > currentTime;
+    });
+    setForecasts(filteredForecasts);
+  }, [data]);
+
+  if (!forecasts || forecasts.length === 0) {
+    return null; // No upcoming forecasts, don't render anything
+  }
 
 
   // State to track the temperature unit (Celsius or Fahrenheit)
