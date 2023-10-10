@@ -59,7 +59,7 @@ const ForecastCard = ({ data }) => {
                 </div>
               </AccordionSummary>
               <AccordionDetails>
-                <div className="h-[200px] p-5 -mt-10">
+                <div className=" p-5 -mt-10">
                   <div className="flex gap-5">
                     <div className="flex flex-col">
                       <img width={60} src={`https://openweathermap.org/img/wn/${forecast.weather[0].icon}.png`} alt="" />

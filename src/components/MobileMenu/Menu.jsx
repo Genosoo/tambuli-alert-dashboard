@@ -31,6 +31,12 @@ const menuItem = [
         icon:<BsCloudLightningRainFill/>
     },
     {
+        path:"/tambuli-alert/video",
+        name:"Video Streaming",
+        icon:<AiTwotoneVideoCamera/>
+        
+    },
+    {
         path:"/tambuli-alert/organizations",
         name:"Organizations",
         icon:<BsFillBuildingsFill/>
@@ -51,12 +57,7 @@ const menuItem = [
         icon:<BsFillPersonFill/>
         
     },
-    {
-        path:"/tambuli-alert/video",
-        name:"Video",
-        icon:<AiTwotoneVideoCamera/>
-        
-    },
+
 
     {
         path:"/tambuli-alert/volunteers",

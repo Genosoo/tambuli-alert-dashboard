@@ -34,6 +34,16 @@ export default function Cards() {
                  </div>
               </div>
               </Link>
+
+              <Link to={'/tambuli-alert/video'}>
+              <div className="cardBox">
+                 <span >Video Streaming</span>
+                 <div className="cardCircle">
+                     <BsFillExclamationTriangleFill/>
+                 </div>
+              </div>
+              </Link>
+              
               <Link to={'/tambuli-alert/map'}>
               <div className="cardBox">
                  <span>Map</span>
@@ -43,14 +53,7 @@ export default function Cards() {
               </div>
               </Link>
 
-              <Link to={'/tambuli-alert/incidents'}>
-              <div className="cardBox">
-                 <span >Incidents</span>
-                 <div className="cardCircle">
-                     <BsFillExclamationTriangleFill/>
-                 </div>
-              </div>
-              </Link>
+              
            </div>
            <div className="cardBoxContainer cardBoxContainer-2">
              <span className='cardTitle'>Manage Facilities</span>

@@ -35,7 +35,7 @@ const menuItem = [
     },
     {
         path:"/tambuli-alert/video",
-        name:"Video",
+        name:"Video Streaming",
         icon:<AiTwotoneVideoCamera/>
         
     },
