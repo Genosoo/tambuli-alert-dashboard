@@ -36,10 +36,13 @@ const ForecastCard = ({ data }) => {
           // Parse the date and time information from forecast.dt_txt
           const dateTime = new Date(forecast.dt_txt);
           // Get day and date in a desired format (e.g., "Sat, Oct 08")
-          const dayDate = dateTime.toLocaleString('en-US', {
+          const dayDate = dateTime.toLocaleString('en-PH', {
             weekday: 'short',
             month: 'short',
             day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: true
           });
 
  

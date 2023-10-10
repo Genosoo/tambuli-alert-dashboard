@@ -112,12 +112,12 @@ export default function WeatherComponent() {
        <div className="flex flex-col  justify-center ">
           <SearchBar onSearch={handleSearch} />
           {weatherData && <WeatherCard data={weatherData} currentLocation={handleGetCurrentLocation} />}
-          <div className="w-[500px] h-[400px] lg:w-[850px] lg:h-[500px] rounded-[15px] mt-5 overflow-hidden">
+          <div className="w-[500px] h-[400px] sm:w-[620px] lg:w-[850px] lg:h-[500px] rounded-[15px] mt-5 overflow-hidden">
         <MapContainer 
         center={mapCenter} 
         zoom={defaultLocation ? 6 : 10}
         ref={mapRef}
-        className="w-[600px] h-[400px]  lg:w-[850px] lg:h-[100%] "
+        className="w-[600px] h-[400px] sm:w-[620px]  lg:w-[850px] lg:h-[100%] "
         >
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -148,7 +148,7 @@ export default function WeatherComponent() {
        </div>
 
       {/* RIGHT COMPONENT */}
-      <div>
+      <div className=" xl:w-[50%] px-10">
         {forecastData && <ForecastCard data={forecastData} />} 
       </div>
      </div>

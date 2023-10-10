@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -6,7 +6,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
-import axios from 'axios'
 
 
 const columns = [
@@ -17,32 +16,24 @@ const columns = [
   { id: 'action', label: 'Action', minWidth: 170 },
 ];
 
-
+const data = [
+  { name: 'Item 1', acronym: 'A1', type: 'Type A', website: 'example.com/item1' },
+  { name: 'Item 2', acronym: 'A2', type: 'Type B', website: 'example.com/item2' },
+  { name: 'Item 2', acronym: 'A2', type: 'Type B', website: 'example.com/item2' },
+  { name: 'Item 2', acronym: 'A2', type: 'Type B', website: 'example.com/item2' },
+  { name: 'Item 2', acronym: 'A2', type: 'Type B', website: 'example.com/item2' },
+  { name: 'Item 2', acronym: 'A2', type: 'Type B', website: 'example.com/item2' },
+  { name: 'Item 2', acronym: 'A2', type: 'Type B', website: 'example.com/item2' },
+  { name: 'Item 2', acronym: 'A2', type: 'Type B', website: 'example.com/item2' },
+  // Add more data objects as needed
+];
 
 
 export default function CustomizedTable() {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
-  const [data,setData] = useState([])
 
 
-  useEffect(() => {
-    // Define the API endpoint you want to fetch data from
-    const apiUrl = 'http://localhost:3001/api/get-organizations';
-  
-    // Make a GET request to the API
-    axios.get(apiUrl)
-      .then((response) => {
-        // Handle the successful response here
-        console.log('Data:', response.data);
-        setData(response.data)
-      })
-      .catch((error) => {
-        // Handle any errors that occurred during the request
-        console.error('Error:', error);
-      });
-  }, []);
-  
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);

@@ -124,6 +124,21 @@
     background: linear-gradient(96deg, #33C0E4 10%, #298BD9 100%) !important;
   }
 
+
+  .video-scroll::-webkit-scrollbar {
+    height:10px;
+  }
+  .video-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .video-scroll::-webkit-scrollbar-thumb {
+    border-radius:5px;
+    background: linear-gradient(96deg, #298BD9 10%, #0e639c 100%) !important;
+  }
+
+  .video-scroll::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(96deg, #33C0E4 10%, #298BD9 100%) !important;
+  }
   
   .sidebar{
     background:#002D4A;
